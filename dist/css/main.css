@@ -417,7 +417,7 @@ mark {
 }
 @media (min-width: 80rem) {
   .container--wide {
-    max-width: calc(100vw - 200px);
+    max-width: 1920px;
   }
 }
 .container--flex-row {
