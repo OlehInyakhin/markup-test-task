@@ -1,8 +1,9 @@
 @use '../helpers' as *;
 
 .header {
-    background: var(--color-light);
+    background: var(--color-gray-300);
     border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
     position: sticky;
     top: 0;
     z-index: 15;

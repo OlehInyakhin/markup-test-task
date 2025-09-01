@@ -9,6 +9,12 @@
     padding-inline: var(--container-padding-x);
   }
 
+  &--wide {
+    @include laptop {
+      max-width: calc(100vw - 200px);
+    }
+  }
+
   &--flex-row {
     display: flex;
     flex-flow: row wrap;
@@ -88,14 +94,6 @@
     animation: pulse-btn-bg 1.5s cubic-bezier(0.8, 0, 0, 1) 0s infinite normal
       none running;
     transition: box-shadow var(--timing, 0.3s);
-
-    &::before {
-      content: url('/img/skiplink-enter-icon.svg');
-      margin-left: var(--skiplink-offset);
-      order: 2;
-      width: var(--skiplink-offset);
-      height: var(--skiplink-offset);
-    }
 
     &::after {
       content: attr(data-title);

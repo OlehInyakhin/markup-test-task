@@ -1,31 +1,5 @@
 import Swiper from 'swiper/bundle';
 
-// Reviews Swiper
-const swiperReviews = new Swiper('.reviews__swiper', {
-    lazy: true,
-    preventClicks: false,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    spaceBetween: 16,
-    slidesPerView: 'auto',
-    breakpoints: {
-        640: {
-            slidesPerView: 2,
-            spaceBetween: 24,
-        },
-        768: {
-            slidesPerView: 3,
-            spaceBetween: 32,
-        },
-        1024: {
-            slidesPerView: 4,
-            spaceBetween: 32,
-        }
-    }
-});
-
 // Blog Swiper with dynamic pagination
 let swiperBlog = null;
 
@@ -40,13 +14,24 @@ function generateBlogPagination() {
     paginationContainer.innerHTML = '';
     
     slides.forEach((slide, index) => {
-        const imageUrl = slide.dataset.image;
-        const imageAlt = slide.dataset.alt;
+        const slideImage = slide.querySelector('.blog-card__image img');
+        const slideLink = slide.querySelector('.blog-card__link');
         
-        if (imageUrl) {
+        if (slideImage) {
+            const imageUrl = slideImage.src;
+            const imageAlt = slideImage.alt;
+            const linkUrl = slideLink ? slideLink.href : null;
+            
             const paginationItem = document.createElement('div');
             paginationItem.className = `blog-slider__pagination-item ${index === 0 ? 'blog-slider__pagination-item--active' : ''}`;
             paginationItem.dataset.slide = index;
+            
+            // Create link wrapper if linkUrl exists
+            const linkWrapper = linkUrl ? document.createElement('a') : document.createElement('div');
+            if (linkUrl) {
+                linkWrapper.href = linkUrl;
+                linkWrapper.className = 'blog-slider__pagination-link';
+            }
             
             const img = document.createElement('img');
             img.src = imageUrl;
@@ -54,7 +39,8 @@ function generateBlogPagination() {
             img.className = 'blog-slider__pagination-image';
             img.loading = 'lazy';
             
-            paginationItem.appendChild(img);
+            linkWrapper.appendChild(img);
+            paginationItem.appendChild(linkWrapper);
             paginationContainer.appendChild(paginationItem);
         }
     });
