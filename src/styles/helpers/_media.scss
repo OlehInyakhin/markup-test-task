@@ -1,0 +1,54 @@
+@use './functions' as *;
+
+$laptop: 1279;
+$tablet: 1023;
+$mobile: 767;
+$mobile-s: 480;
+
+@mixin laptop($useMaxWith: false) {
+  @if $useMaxWith {
+    @media (max-width: rem($laptop)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: rem($laptop + 1)) {
+      @content;
+    }
+  }
+}
+
+@mixin tablet($useMaxWith: false) {
+  @if $useMaxWith {
+    @media (max-width: rem($tablet)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: rem($tablet + 1)) {
+      @content;
+    }
+  }
+}
+
+@mixin mobile($useMaxWith: false) {
+  @if $useMaxWith {
+    @media (max-width: rem($mobile)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: rem($mobile + 1)) {
+      @content;
+    }
+  }
+}
+
+@mixin mobile-s($useMaxWith: false) {
+  @if $useMaxWith {
+    @media (max-width: rem($mobile-s)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: rem($mobile-s + 1)) {
+      @content;
+    }
+  }
+}

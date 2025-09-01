@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" class="page custom-scrollbar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Allows you to change the color of the browser address bar and the top of the browser on mobile devices -->
+    <title>RevitaLash Cosmetics - Lashes, Brows Hair Serums Products</title>
+    <!-- The most important parameter is what will appear in the search engine, you should put as many keywords as possible in this header,unique for each page -->
+    <meta name="description" content="you description" />
+    <meta name="keywords" content="you keywords" />
+    <meta name="author" content="RevitaLash Cosmetics" />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" as="style" href="css/main.min.css" />
+    <script defer src="js/main.min.js"></script>
+  </head>
+  <body class="page__body">
+    <div class="site-container">
+      @include('../blocks/header.html')
+      <main class="page__main" id="main">
+        @include('../blocks/products-slider.html')
+        @include('../blocks/blog-slider.html')
+      </main>
+      @include('../blocks/cart-panel.html')
+    </div>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+@use 'helpers' as *;
+
+:root {
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-accent: 'Times New Roman', Times, serif;
+
+  --font-size-base: #{rem(16)};
+  --font-size-small: #{rem(14)};
+  
+  --color-dark: #000;
+  --color-gray-800: #5E5E5E;
+  --color-gray-700: #8F8F8F;
+  --color-gray-600: #ccc;
+  --color-gray-500: #ECECEC;
+  --color-gray-400: #F3F3F3;
+  --color-gray-300: #F9F9F9;
+  --color-light: #fff;
+  --color-green: #21D184;
+
+  --color-primary: #3B3B3B;
+  --color-secondary: #5A2EBE;
+  --color-tertiary: #F5F0EA;
+  --color-text-secondary: #666;
+  --color-success: #21D184;
+  --color-error: #FF5C5C;
+  --color-link: var(--color-secondary);
+  
+  --color-text-primary: #1F1F1F;
+  --color-text-secondary: #666;
+
+  --container-width: #{rem(1280)};
+  --container-padding-x: #{rem(32)};
+  --container-mobile-padding-x: #{rem(16)};
+
+  --section-spacing: #{rem(80)};
+  --section-spacing-mobile: #{rem(40)};
+  
+  --header-height: #{rem(104)};
+  --header-height-mobile: #{rem(55)};
+
+  --border-color: #D9D9D9;
+  
+  --shadow: 0px 8px 16px 0px rgba(0, 0, 0, .16);
+  
+  --border-radius: 0;
+  
+  --buttons-padding-x: #{rem(20)};
+  --buttons-padding-y: #{rem(6)};
+  --buttons-bg: var(--color-dark);
+  --buttons-bg-hover: var(--color-light);
+  --buttons-color: var(--color-light);
+  --buttons-color-hover: var(--color-dark);
+  --buttons-outline-bg: transparent;
+  --buttons-outline-color: var(--color-dark);
+  --shadow-focus: 0 2px 5px var(--color-dark);
+  
+  --transition-duration: 0.3s;
+  
+  --preloader-z-index: 1001;
+  --header-nav-z-index: 10;
+  
+  --overlay-shadow: 0 0 #{rem(6)} rgba(0, 0, 0, 0.2);
+  --overlay: rgba(0, 0, 0, 0.5);
+  
+  --swiper-navigation-color: var(--color-dark);
+}

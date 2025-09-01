@@ -1,0 +1,241 @@
+@use '../helpers' as *;
+
+// Blog Slider
+.blog-slider {
+  padding: var(--section-spacing-mobile) 0;
+
+  @include tablet {
+    padding: var(--section-spacing) 0;
+  }
+
+  &__header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0 rem(30);
+    margin-bottom: rem(30);
+  }
+
+  &__title {
+    @include fluid-text(36, 28);
+    line-height: 1.3;
+    font-weight: 400;
+    letter-spacing: rem(2);
+    margin: 0 auto 0 0;
+  }
+
+  &__view-all {
+    letter-spacing: rem(1);
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+
+    @include tablet(true) {
+      gap: rem(30);
+    }
+  }
+
+  // Custom pagination with images
+  &__pagination {
+    display: flex;
+    gap: 0;
+
+    @include mobile(true) {
+      display: none; // Hide pagination on mobile devices
+    }
+
+    &-item {
+      flex: 0 0 19.5%;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      transition: flex 0.3s ease;
+      height: rem(450);
+  
+      &--active {
+        flex: 5;
+      }
+    }
+  
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}
+
+// Blog Swiper
+.blog-swiper {
+  overflow: hidden;
+
+  @include tablet(true) {
+    width: calc(100% + rem(32));
+    margin: 0 rem(-16);
+  }
+  
+  .swiper-wrapper {
+    transition-timing-function: ease-in-out;
+  }
+
+  .swiper-slide {
+    height: auto;
+  }
+
+  // Hide images in slides when pagination is visible
+  @include tablet {
+    .blog-card__image {
+      display: none;
+    }
+  }
+
+  @include laptop {
+    .blog-card__image {
+      display: none;
+    }
+  }
+}
+
+// Blog Card
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  @include tablet(true) {
+    gap: rem(16);
+  }
+
+  &__image {
+    width: 100%;
+    height: rem(350);
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: rem(15);
+
+    @include laptop {
+      grid-template-columns: auto 1fr auto;
+    }
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      gap: rem(30);
+    }
+
+    @include tablet(true) {
+      padding: 0 var(--container-mobile-padding-x);
+    }
+  }
+
+  &__date {
+    font-family: var(--font-family-accent);
+    font-size: rem(18);
+    text-transform: uppercase;
+
+    @include tablet {
+      white-space: nowrap;
+      writing-mode: vertical-lr;
+      text-align: right;
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__category {
+    font-family: var(--font-family-base);
+    font-size: rem(12);
+    font-weight: 400;
+    letter-spacing: rem(1);
+    text-transform: uppercase;
+    margin-bottom: rem(15);
+
+    @include mobile(true) {
+      margin-bottom: rem(10);
+    }
+  }
+
+  &__title {
+    font-family: var(--font-family-accent);
+    font-size: rem(24);
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--color-dark);
+    margin: 0;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @include mobile(true) {
+      margin-top: rem(15);
+    }
+  }
+
+  &__excerpt {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-small);
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: 0 0 rem(20) 0;
+
+    @include mobile(true) {
+      margin-bottom: rem(15);
+    }
+  }
+
+  &__link {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-small);
+    font-weight: 400;
+    letter-spacing: rem(1);
+    color: var(--color-dark);
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+    margin-top: auto;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: rem(-2);
+      left: 0;
+      width: 0;
+      height: rem(1);
+      background-color: var(--color-secondary);
+      transition: width 0.3s ease;
+    }
+
+    @include hover {
+      color: var(--color-secondary);
+
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}
