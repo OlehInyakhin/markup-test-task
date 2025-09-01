@@ -181,7 +181,7 @@
                 width: 100vw;
                 opacity: 0;
                 visibility: hidden;
-                background: var(--color-light);
+                background: var(--color-gray-300);
                 box-shadow: var(--shadow);
                 transition-duration: var(--transition-duration);
 
@@ -334,7 +334,7 @@
         width: calc(100% - 55px);
         height: calc(100vh - (var(--header-height-mobile) + 1px));
         padding: 2.5rem 2rem;
-        background: var(--color-light);
+        background: var(--color-gray-300);
         box-shadow: var(--shadow);
         z-index: 100;
         transform: translateX(-100%);

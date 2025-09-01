@@ -365,7 +365,7 @@ mark {
   --color-gray-700: #8F8F8F;
   --color-gray-600: #ccc;
   --color-gray-500: #ECECEC;
-  --color-gray-400: #F3F3F3;
+  --color-gray-400: #f1fafa;
   --color-gray-300: #FDFBFA;
   --color-light: #fff;
   --color-green: #21D184;
@@ -2535,7 +2535,7 @@ a[data-fancybox] {
     width: 100vw;
     opacity: 0;
     visibility: hidden;
-    background: var(--color-light);
+    background: var(--color-gray-300);
     -webkit-box-shadow: var(--shadow);
     box-shadow: var(--shadow);
     -webkit-transition-duration: var(--transition-duration);
@@ -2690,7 +2690,7 @@ a[data-fancybox] {
   width: calc(100% - 55px);
   height: calc(100vh - (var(--header-height-mobile) + 1px));
   padding: 2.5rem 2rem;
-  background: var(--color-light);
+  background: var(--color-gray-300);
   -webkit-box-shadow: var(--shadow);
   box-shadow: var(--shadow);
   z-index: 100;
@@ -2827,7 +2827,7 @@ a[data-fancybox] {
 
 .products-slider {
   padding: var(--section-spacing-mobile) 0;
-  background: var(--color-gray-300);
+  background: var(--color-gray-400);
 }
 @media (min-width: 64rem) {
   .products-slider {
@@ -3551,4 +3551,4 @@ a[data-fancybox] {
 }
 .cart-panel__close:hover {
   background-color: var(--color-tertiary);
-}/*# sourceMappingURL=main.css.map */
+}
